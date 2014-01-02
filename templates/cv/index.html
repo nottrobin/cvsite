@@ -1,129 +1,96 @@
-<!doctype html>
+{% extends "cv/wrapper.html" %}
+{% load cv_markdown %}
 
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <meta name="viewport" content="width=device-width">
-       
-        <title>{{ page.title }} | Robin Winslow</title>
-        
-        {% if page.description %}<meta name="description" content="{{ page.description }}">{% endif %}
-    </head>
+{% block content %}
+<nav class="page-navigation">
+    <ul>
+        <li><a href="#roles">Previous roles</a></li>
+        <li><a href="#client-side">Client-side tech</a></li>
+        <li><a href="#server-side">Server-side tech</a></li>
+        <li><a href="#study">Study</a></li>
+        <li><a href="#philosophy">Philosophy</a></li>
+    </ul>
+</nav>
 
-    <body>
-        <header>
-            <h1 class="fn given-name">
-                Robin <span class="surname">Winslow
-            </h1>
+<section id="roles">
+    <div class="section-title"><h1>Previous roles</h1></div>
 
-            <nav class="external-navigation">
-                <ul>
-                    <li><a href="https://github.com/nottrobin">Github</a></li>
-                    <li><a href="http://stackoverflow.com/users/613540/robin-winslow">StackOverflow</li>
-                    <li><a href="https://twitter.com/nottrobin">Twitter</li>
-                    <li><a href="http://www.linkedin.com/in/robinwinslow">LinkedIn</a></li>
-                </ul>
-            </nav>
-        </header>
+    <nav class="topic-navigation">
+        <ul>
+            <li>2012: Lead developer (Hillarys)</li>
+            <li>2011: Web developer (IPC Media)</li>
+            <li>Energise, Mokoro &amp; Tamar</li>
+            <li>My dream job</li>
+        </ul>
+    </nav>
 
-        <nav class="page-navigation">
-            <ul>
-                <li><a href="#roles">Roles</a></li>
-                <li><a href="#client-side">Client-side tech</a></li>
-                <li><a href="#server-side">Server-side tech</a></li>
-                <li><a href="#study">Study</a></li>
-                <li><a href="#philosophy">Philosophy</a></li>
-            </ul>
-        </nav>
+    <p class="summary">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+</section>
 
-        <section id="roles">
-            <h1>Roles</h1>
+<section id="client-side">
+    <div class="section-title"><h1>Client-side tech</h1></div>
 
-            <p class="summary"></p>
+    <nav class="topic-navigation">
+        <ul>
+            <li>HTML</li>
+            <li>CSS &amp; Sass</li>
+            <li>JavaScript</li>
+            <li>Responsive design</li>
+            <li>Usability</li>
+            <li>Performance</li>
+        </ul>
+    </nav>
 
-            <nav class="section-navigation">
-                <ul>
-                    <li>2012: Lead developer (Hillarys)</li>
-                    <li>2011: Web developer (IPC Media)</li>
-                    <li>Energise, Mokoro &amp; Tamar</li>
-                    <li>My dream job</li>
-                </ul>
-            </nav>
-        </section>
+    <p class="summary">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+</section>
 
-        <section id="client-side">
-            <h1>Client-side tech</h1>
+<section id="server-side">
+    <div class="section-title"><h1>Server-side tech</h1></div>
 
-            <p class="summary"></p>
+    <nav class="topic-navigation">
+        <ul>
+            <li>PHP</li>
+            <li>MySQL</li>
+            <li>Dev ops</li>
+            <li>Python</li>
+            <li>C#</li>
+            <li>Ruby</li>
+        </ul>
+    </nav>
 
-            <nav class="section-navigation">
-                <ul>
-                    <li>HTML</li>
-                    <li>CSS &amp; Sass</li>
-                    <li>JavaScript</li>
-                    <li>Responsive design</li>
-                    <li>Usability</li>
-                    <li>Performance</li>
-                </ul>
-            </nav>
-        </section>
+    <p class="summary">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+</section>
 
-        <section id="server-side">
-            <h1>Server-side tech</h1>
+<section id="study">
+    <div class="section-title"><h1>Study</h1></div>
 
-            <p class="summary"></p>
+    <nav class="topic-navigation">
+        <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </nav>
 
-            <nav class="section-navigation">
-                <ul>
-                    <li>PHP</li>
-                    <li>MySQL</li>
-                    <li>Dev ops</li>
-                    <li>Python</li>
-                    <li>C#</li>
-                    <li>Ruby</li>
-                </ul>
-            </nav>
-        </section>
-
-        <section id="study">
-            <h1>Study</h1>
-
-            <p class="summary"></p>
-
-            <nav class="section-navigation">
-                <ul>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                </ul>
-            </nav>
-        </section>
+    <p class="summary">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+</section>
 
 
-        <section id="philosophies">
-            <h1>Philosophies</h1>
+<section id="philosophies">
+    <div class="section-title"><h1>Philosophies</h1></div>
 
-            <p class="summary"></p>
+    <nav class="topic-navigation">
+        <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </nav>
 
-            <nav class="section-navigation">
-                <ul>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                </ul>
-            </nav>
-        </section>
-
-        <footer>
-            <aside>
-                <p class="side">Please <a href="http://creativecommons.org/licenses/by-sa/3.0/">copy, modify and reshare</a> my work.</p>
-                <p>By <a href="https://plus.google.com/104026832761488144614" rel="author">Robin Winslow</a></a>
-            </aside>
-        </footer>
-    </body>
-</html>
+    <p class="summary">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+</section>
+{% endblock content %}
