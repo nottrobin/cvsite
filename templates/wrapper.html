@@ -1,0 +1,89 @@
+{% load staticfiles %}
+<!doctype html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width">
+       
+        <title>{{ title }} | Robin Winslow</title>
+        
+        {% if page.description %}<meta name="description" content="{{ page.description }}">{% endif %}
+
+        <script>
+            function getJson(url, callback)
+            {
+                var request = window.ActiveXObject ? new ActiveXObject("Microsoft.XMLHTTP") : new XMLHttpRequest();
+
+                request.onreadystatechange = function() {
+                    if (request.readyState === 4) {
+                        callback(request.responseText);
+                    }
+                }
+
+                request.open('GET', url, true)
+                request.send()
+            }
+        </script>
+
+        <link rel="stylesheet" href="{% static 'css/fonts.css' %}" />
+        <link rel="stylesheet" href="{% static 'css/global.css' %}" />
+    </head>
+
+    <body>
+        <header>
+            <h1 class="given-name headline">
+                <span class="fn forename">Robin</span>
+                <span class="sn surname">Winslow</span>
+            </h1>
+
+            <nav class="external-navigation">
+                <ul>
+                    <li><a href="https://github.com/nottrobin">
+                        <img src="{% static 'images/class-act-octocat.png' %}" alt="Github: social coding" title="Nottrobin on Github" />
+                        <span id="js-replace-repos">Github</span>
+                    </a></li>
+                    <li><a href="http://stackoverflow.com/users/613540/robin-winslow">
+                         <img src="{% static 'images/stackoverflow.png' %}" alt="StackOverflow" title="Nottrobin on StackOverflow" />
+                         <span id="js-replace-rep">StackOverflow</span>
+                    </a></li>
+                    <li><a href="http://robinwinslow.co.uk">
+                        <img src="{% static 'images/jekyll.png' %}" alt="My Jekyll blog" title="My Jekyll blog" />
+                        Blog
+                    </a></li>
+
+                    <li><a href="https://twitter.com/nottrobin">
+                        <img src="{% static 'images/twitter.png' %}" alt="Twitter" title="Nottrobin on Twitter" />
+                        Twitter
+                    </a></li>
+                    <li><a href="http://google.com/+robinwinslow">
+                        <img src="{% static 'images/google-plus.png' %}" alt="Google+" title="Robin Winslow on Google+" />
+                        Google+
+                    </a></li>
+                </ul>
+            </nav>
+
+            <script>
+                getJson(
+                    '{% url "profiles" %}',
+                    function(profilesJson) {
+                        var profiles = JSON ? JSON.parse(profilesJson) : eval('(' + profilesJson + ')');
+
+                        document.getElementById('js-replace-repos').innerHTML = profiles.repositories + " repos";
+                        document.getElementById('js-replace-rep').innerHTML = profiles.reputation + " reputation";
+                    }
+                );
+            </script>
+        </header>
+
+        {% block content %}{% endblock %}
+
+        <footer>
+            <aside>
+                <p class="side">Please <a href="http://creativecommons.org/licenses/by-sa/3.0/">copy, modify and reshare</a> my work.</p>
+                <p>By <a href="https://plus.google.com/104026832761488144614" rel="author">Robin Winslow</a></a>
+            </aside>
+        </footer>
+    </body>
+</html>
