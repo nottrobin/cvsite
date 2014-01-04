@@ -27,15 +27,16 @@
             }
         </script>
 
-        <link rel="stylesheet" href="{% static 'css/fonts.css' %}" />
+        <link rel="stylesheet" href="{% static 'css/all-fonts.css' %}" />
         <link rel="stylesheet" href="{% static 'css/global.css' %}" />
     </head>
 
     <body>
         <header>
-            <h1 class="given-name headline">
-                <span class="fn forename">Robin</span>
-                <span class="sn surname">Winslow</span>
+            <h1 class="email headline">
+                <a href="mailto:robin@robinwinslow.co.uk">
+                    robin@<span class="highlight">robinwinslow.</span>co.uk
+                </a>
             </h1>
 
             <nav class="external-navigation">
@@ -52,14 +53,9 @@
                         <img src="{% static 'images/jekyll.png' %}" alt="My Jekyll blog" title="My Jekyll blog" />
                         Blog
                     </a></li>
-
                     <li><a href="https://twitter.com/nottrobin">
                         <img src="{% static 'images/twitter.png' %}" alt="Twitter" title="Nottrobin on Twitter" />
                         Twitter
-                    </a></li>
-                    <li><a href="http://google.com/+robinwinslow">
-                        <img src="{% static 'images/google-plus.png' %}" alt="Google+" title="Robin Winslow on Google+" />
-                        Google+
                     </a></li>
                 </ul>
             </nav>
